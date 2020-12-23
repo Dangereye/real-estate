@@ -1,0 +1,53 @@
+@mixin changeBgOnHover {
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+button,
+.btn {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  font-size: $base-font-size;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+
+  &.btn-primary {
+    @include changeBgOnHover;
+    margin-top: $base-margin;
+    padding: 1.6rem 3.2rem;
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  &.btn-contact,
+  &.previous-slide,
+  &.next-slide {
+    @include changeBgOnHover;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $primary-color;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
