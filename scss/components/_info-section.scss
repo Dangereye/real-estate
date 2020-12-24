@@ -1,0 +1,45 @@
+#info-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: rgb(41, 41, 41);
+
+  .container {
+    width: 100%;
+    max-width: 140rem;
+    height: 100%;
+    padding: $base-padding 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+    .text-side,
+    .image-side {
+      padding: $base-padding;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      > *:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-size: clamp(3.2rem, 2.5vw, 4rem);
+        font-weight: 400;
+      }
+      p {
+        max-width: 70ch;
+        font-weight: 300;
+      }
+
+      img {
+        align-self: center;
+        width: 100%;
+        max-height: 80rem;
+        object-fit: cover;
+      }
+    }
+  }
+}
