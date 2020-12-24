@@ -5,6 +5,16 @@ html {
   line-height: 1.618;
 }
 
+h2.page-title {
+  font-size: clamp(3.2rem, 2.5vw, 4rem);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  font-weight: 400;
+}
+
 button,
 .btn {
   width: -webkit-max-content;
@@ -73,6 +83,11 @@ button.btn-contact svg path, button.previous-slide svg path, button.next-slide s
   stroke: #fff;
 }
 
+button.btn-transparent,
+.btn.btn-transparent {
+  color: #2a2a2a;
+}
+
 button:focus,
 .btn:focus {
   outline: none;
@@ -105,6 +120,24 @@ a {
 body {
   font-size: clamp(1.6rem, 2.5vw, 2rem);
   overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+  padding: clamp(1.6rem, 2.5vw, 4rem) 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #2a2a2a;
+}
+
+section .container {
+  width: 100%;
+  max-width: 140rem;
+  height: 100%;
 }
 
 nav {
@@ -274,14 +307,15 @@ nav .mobile-menu.active div:nth-of-type(3) {
   color: #000d1a;
 }
 
-header#hero {
+#hero {
   width: 100vw;
   height: 100vh;
+  min-height: 55rem;
   position: relative;
   overflow: hidden;
 }
 
-header#hero .wrapper {
+#hero .wrapper {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -295,15 +329,15 @@ header#hero .wrapper {
           align-items: center;
 }
 
-header#hero .wrapper .hero-slide {
+#hero .wrapper .hero-slide {
   width: 100%;
   height: 100%;
 }
 
-header#hero .wrapper .hero-slide .hero-image {
+#hero .wrapper .hero-slide .hero-image {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   display: -webkit-box;
@@ -317,7 +351,7 @@ header#hero .wrapper .hero-slide .hero-image {
           align-items: center;
 }
 
-header#hero .wrapper .hero-slide .hero-image::before {
+#hero .wrapper .hero-slide .hero-image::before {
   content: '';
   display: block;
   width: 100%;
@@ -330,7 +364,7 @@ header#hero .wrapper .hero-slide .hero-image::before {
   z-index: 1;
 }
 
-header#hero .wrapper .hero-slide .hero-content {
+#hero .wrapper .hero-slide .hero-content {
   position: relative;
   width: 100%;
   padding: clamp(1.6rem, 2.5vw, 4rem);
@@ -338,7 +372,7 @@ header#hero .wrapper .hero-slide .hero-content {
   z-index: 2;
 }
 
-header#hero .wrapper .hero-slide .hero-content h1 {
+#hero .wrapper .hero-slide .hero-content h1 {
   font-size: clamp(2.4rem, 5vw, 4.8rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -347,14 +381,14 @@ header#hero .wrapper .hero-slide .hero-content h1 {
   margin-bottom: 8px;
 }
 
-header#hero .wrapper .hero-slide .hero-content p {
+#hero .wrapper .hero-slide .hero-content p {
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 600;
   letter-spacing: 2px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-header#hero .slider-buttons {
+#hero .slider-buttons {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -366,27 +400,11 @@ header#hero .slider-buttons {
   gap: 1.6rem;
 }
 
-#info-section {
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #292929;
-}
-
 #info-section .container {
-  width: 100%;
-  max-width: 140rem;
-  height: 100%;
-  padding: clamp(1.6rem, 2.5vw, 4rem) 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(35rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 #info-section .container .text-side,
@@ -412,12 +430,6 @@ header#hero .slider-buttons {
   margin-bottom: 2rem;
 }
 
-#info-section .container .text-side h2,
-#info-section .container .image-side h2 {
-  font-size: clamp(3.2rem, 2.5vw, 4rem);
-  font-weight: 400;
-}
-
 #info-section .container .text-side p,
 #info-section .container .image-side p {
   max-width: 70ch;
@@ -426,11 +438,50 @@ header#hero .slider-buttons {
 
 #info-section .container .text-side img,
 #info-section .container .image-side img {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   width: 100%;
-  max-height: 80rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #info-section .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+#listings-section .container {
+  padding: clamp(1.6rem, 2.5vw, 4rem);
+}
+
+#listings-section .homes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.6rem, 2.5vw, 4rem);
+}
+
+#listings-section .homes .home {
+  padding: clamp(1.6rem, 2.5vw, 4rem) 0;
+}
+
+#listings-section .homes .home > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+#listings-section .homes .home:nth-child(2) {
+  margin-top: 12rem;
+}
+
+#listings-section .homes .home img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #listings-section .homes {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #listings-section .homes .home:nth-child(2) {
+    margin-top: 0;
+  }
 }

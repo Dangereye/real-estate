@@ -1,5 +1,5 @@
-import ImageOne from '../images/interior-one.jpg';
-import ImageTwo from '../images/house-five.jpg';
+import ImageOne from '../images/interior-1.jpg';
+import ImageTwo from '../images/house-5.jpg';
 
 export const infoData = {
   heading: 'Explore our beautiful homes',

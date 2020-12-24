@@ -12,7 +12,7 @@ const InfoSection = ({
     <section id='info-section'>
       <div className='container'>
         <div className='text-side'>
-          <h2>{heading}</h2>
+          <h2 className='page-title'>{heading}</h2>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
           <Link className='btn btn-primary' to='/homes'>

@@ -1,23 +1,21 @@
-#info-section {
+#listings-section {
   .container {
+    padding: $base-padding;
+  }
+  .homes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: $base-padding;
 
-    .text-side,
-    .image-side {
-      padding: $base-padding;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+    .home {
+      padding: $base-padding 0;
 
       > *:not(:last-child) {
         margin-bottom: 2rem;
       }
 
-      p {
-        max-width: 70ch;
-        font-weight: 300;
+      &:nth-child(2) {
+        margin-top: 12rem;
       }
 
       img {
@@ -25,9 +23,16 @@
       }
     }
   }
+
   @media (max-width: 768px) {
-    .container {
+    .homes {
       grid-template-columns: 1fr;
+
+      .home {
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
     }
   }
 }

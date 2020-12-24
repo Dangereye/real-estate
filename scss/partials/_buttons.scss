@@ -43,6 +43,10 @@ button,
     }
   }
 
+  &.btn-transparent {
+    color: $text-dark;
+  }
+
   &:focus {
     outline: none;
   }

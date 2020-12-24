@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DropdownNav from './components/DropdownNav';
 import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
+import ListingsSection from './components/ListingsSection';
 import Navbar from './components/Navbar';
 import { infoData } from './data/InfoSectionData';
 import { SliderData } from './data/SliderData';
@@ -19,6 +20,7 @@ const App = () => {
       <DropdownNav isOpen={isOpen} />
       <Hero slides={SliderData} />
       <InfoSection {...infoData} />
+      <ListingsSection />
     </div>
   );
 };
