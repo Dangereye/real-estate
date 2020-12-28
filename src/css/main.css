@@ -124,7 +124,6 @@ body {
 
 section {
   width: 100%;
-  padding: clamp(1.6rem, 2.5vw, 4rem) 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -483,5 +482,87 @@ nav .mobile-menu.active div:nth-of-type(3) {
   }
   #listings-section .homes .home:nth-child(2) {
     margin-top: 0;
+  }
+}
+
+#features-section {
+  position: relative;
+  padding: clamp(1.6rem, 2.5vw, 4rem) 0;
+  background-color: #000d1a;
+}
+
+#features-section .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 6rem max-content 6rem;
+      grid-template-rows: 6rem -webkit-max-content 6rem;
+      grid-template-rows: 6rem max-content 6rem;
+}
+
+@media (max-width: 768px) {
+  #features-section .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (max-content)[2];
+        grid-template-rows: repeat(2, -webkit-max-content);
+        grid-template-rows: repeat(2, max-content);
+  }
+}
+
+#features-section .container .text-side {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  margin-right: clamp(1.6rem, 2.5vw, 4rem);
+  padding: clamp(1.6rem, 2.5vw, 4rem);
+  background-color: #fff;
+}
+
+#features-section .container .text-side > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+#features-section .container .text-side p {
+  max-width: 70ch;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  #features-section .container .text-side {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+}
+
+#features-section .container .image-side {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  padding-left: clamp(1.6rem, 2.5vw, 4rem);
+}
+
+@media (max-width: 768px) {
+  #features-section .container .image-side {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    padding: 0 clamp(1.6rem, 2.5vw, 4rem);
+  }
+}
+
+#features-section .container .image-side img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #features-section {
+    padding: 0;
+    background-color: #fff;
   }
 }

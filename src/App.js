@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import DropdownNav from './components/DropdownNav';
+import Features from './components/Features';
 import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
 import ListingsSection from './components/ListingsSection';
 import Navbar from './components/Navbar';
-import { infoData } from './data/InfoSectionData';
+import { infoData, infoDataTwo } from './data/InfoSectionData';
 import { SliderData } from './data/SliderData';
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
       <Hero slides={SliderData} />
       <InfoSection {...infoData} />
       <ListingsSection />
+      <Features />
+      <InfoSection {...infoDataTwo} />
     </div>
   );
 };
