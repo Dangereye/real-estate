@@ -1,15 +1,16 @@
 #listings-section {
   .container {
-    padding: $base-padding;
+    > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
+
   .homes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: $base-padding;
+    gap: 2rem;
 
     .home {
-      padding: $base-padding 0;
-
       > *:not(:last-child) {
         margin-bottom: 2rem;
       }

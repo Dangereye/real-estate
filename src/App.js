@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DropdownNav from './components/DropdownNav';
 import Features from './components/Features';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
 import ListingsSection from './components/ListingsSection';
@@ -24,6 +25,7 @@ const App = () => {
       <ListingsSection />
       <Features />
       <InfoSection {...infoDataTwo} />
+      <Footer />
     </div>
   );
 };

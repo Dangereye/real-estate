@@ -1,12 +1,11 @@
 #features-section {
-  position: relative;
-  padding: $base-padding 0;
   background-color: $primary-color;
 
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 6rem max-content 6rem;
+    gap: 2rem;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -15,7 +14,6 @@
 
     .text-side {
       grid-row: 2/3;
-      margin-right: $base-padding;
 
       > *:not(:last-child) {
         margin-bottom: 2rem;
@@ -29,17 +27,16 @@
       }
 
       @media (max-width: 768px) {
-        grid-row: 2/3;
+        grid-row: 1/2;
+        padding: 0;
       }
     }
 
     .image-side {
       grid-row: 1/4;
-      padding-left: $base-padding;
 
       @media (max-width: 768px) {
-        grid-row: 1/2;
-        padding: 0 $base-padding;
+        grid-row: 2/3;
       }
 
       img {
@@ -51,7 +48,6 @@
   }
 
   @media (max-width: 768px) {
-    padding: 0;
     background-color: #fff;
   }
 }

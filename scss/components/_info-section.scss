@@ -3,9 +3,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
-    .text-side,
-    .image-side {
-      padding: $base-padding;
+    .text-side {
+      margin-right: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -20,8 +19,17 @@
         font-weight: 300;
       }
 
+      @media (max-width: 768px) {
+        margin: 0;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .image-side {
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }

@@ -47,6 +47,12 @@ button,
     color: $text-dark;
   }
 
+  &.btn-secondary {
+    padding: 1.6rem 3.2rem;
+    background-color: $secondary-color;
+    color: #fff;
+  }
+
   &:focus {
     outline: none;
   }

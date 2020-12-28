@@ -20,13 +20,16 @@ body {
   overflow-x: hidden;
 }
 
-section {
+section,
+footer {
   width: 100%;
   display: flex;
   justify-content: center;
   color: $text-dark;
+  padding: $section-padding 0;
 
   .container {
+    padding: 0 $base-padding;
     width: 100%;
     max-width: 140rem;
     height: 100%;
