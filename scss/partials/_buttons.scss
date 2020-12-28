@@ -19,7 +19,6 @@ button,
 
   &.btn-primary {
     @include changeBgOnHover;
-    margin-top: $base-margin;
     padding: 1.6rem 3.2rem;
     background-color: $primary-color;
     color: #fff;

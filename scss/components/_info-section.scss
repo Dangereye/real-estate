@@ -2,6 +2,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 
     .text-side {
       margin-right: 4rem;
@@ -21,7 +22,6 @@
 
       @media (max-width: 768px) {
         margin: 0;
-        margin-bottom: 2rem;
       }
     }
 
