@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import DropdownNav from './components/DropdownNav';
-import Features from './components/Features';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
-import InfoSection from './components/InfoSection';
-import ListingsSection from './components/ListingsSection';
 import Navbar from './components/Navbar';
-import { infoData, infoDataTwo } from './data/InfoSectionData';
-import { SliderData } from './data/SliderData';
+import Home from './pages';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Homes from './pages/Homes';
+import Rentals from './pages/Rentals';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +20,13 @@ const App = () => {
     <div>
       <Navbar toggle={toggle} />
       <DropdownNav isOpen={isOpen} />
-      <Hero slides={SliderData} />
-      <InfoSection {...infoData} />
-      <ListingsSection />
-      <Features />
-      <InfoSection {...infoDataTwo} />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/about' exact component={About} />
+        <Route path='/homes' exact component={Homes} />
+        <Route path='/rentals' exact component={Rentals} />
+        <Route path='/contact' exact component={Contact} />
+      </Switch>
       <Footer />
     </div>
   );

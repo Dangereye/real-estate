@@ -43,48 +43,58 @@ button,
   cursor: pointer;
 }
 
-button.btn-primary,
-.btn.btn-primary {
+button.btn-primary, button.btn-primary:active,
+.btn.btn-primary,
+.btn.btn-primary:active {
   padding: 1.6rem 3.2rem;
   background-color: #000d1a;
   color: #fff;
 }
 
-button.btn-primary:hover,
-.btn.btn-primary:hover {
+button.btn-primary:hover, button.btn-primary:active:hover,
+.btn.btn-primary:hover,
+.btn.btn-primary:active:hover {
   background-color: #cd853f;
 }
 
-button.btn-contact, button.previous-slide, button.next-slide,
+button.btn-contact, button.btn-contact:active, button.previous-slide, button.previous-slide:active, button.next-slide, button.next-slide:active,
 .btn.btn-contact,
+.btn.btn-contact:active,
 .btn.previous-slide,
-.btn.next-slide {
+.btn.previous-slide:active,
+.btn.next-slide,
+.btn.next-slide:active {
   width: 56px;
   height: 56px;
   border-radius: 50%;
   background-color: #000d1a;
 }
 
-button.btn-contact:hover, button.previous-slide:hover, button.next-slide:hover,
-.btn.btn-contact:hover,
-.btn.previous-slide:hover,
-.btn.next-slide:hover {
-  background-color: #cd853f;
-}
-
-button.btn-contact svg, button.previous-slide svg, button.next-slide svg,
+button.btn-contact svg, button.btn-contact:active svg, button.previous-slide svg, button.previous-slide:active svg, button.next-slide svg, button.next-slide:active svg,
 .btn.btn-contact svg,
+.btn.btn-contact:active svg,
 .btn.previous-slide svg,
-.btn.next-slide svg {
+.btn.previous-slide:active svg,
+.btn.next-slide svg,
+.btn.next-slide:active svg {
   width: 2.4rem;
   height: 2.4rem;
 }
 
-button.btn-contact svg path, button.previous-slide svg path, button.next-slide svg path,
+button.btn-contact svg path, button.btn-contact:active svg path, button.previous-slide svg path, button.previous-slide:active svg path, button.next-slide svg path, button.next-slide:active svg path,
 .btn.btn-contact svg path,
+.btn.btn-contact:active svg path,
 .btn.previous-slide svg path,
-.btn.next-slide svg path {
+.btn.previous-slide:active svg path,
+.btn.next-slide svg path,
+.btn.next-slide:active svg path {
   stroke: #fff;
+}
+
+button.previous-slide:hover, button.next-slide:hover,
+.btn.previous-slide:hover,
+.btn.next-slide:hover {
+  background-color: #cd853f;
 }
 
 button.btn-transparent,
@@ -197,12 +207,6 @@ nav .nav-menu li a {
   font-size: 1.8rem;
   letter-spacing: 1px;
   font-weight: 500;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-nav .nav-menu li a:hover {
-  color: #cd853f;
 }
 
 nav .mobile-menu {
@@ -380,7 +384,7 @@ nav .mobile-menu.active div:nth-of-type(3) {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 

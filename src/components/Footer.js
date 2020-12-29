@@ -65,6 +65,7 @@ const Footer = () => {
           </div>
           <Link to='/homes' className='btn btn-secondary'>
             Let's Chat
+            <IoMdArrowRoundForward />
           </Link>
         </div>
       </div>

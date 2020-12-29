@@ -17,7 +17,8 @@ button,
   transition: 0.4s;
   cursor: pointer;
 
-  &.btn-primary {
+  &.btn-primary,
+  &.btn-primary:active {
     @include changeBgOnHover;
     padding: 1.6rem 3.2rem;
     background-color: $primary-color;
@@ -25,9 +26,11 @@ button,
   }
 
   &.btn-contact,
+  &.btn-contact:active,
   &.previous-slide,
-  &.next-slide {
-    @include changeBgOnHover;
+  &.previous-slide:active,
+  &.next-slide,
+  &.next-slide:active {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -40,6 +43,11 @@ button,
         stroke: #fff;
       }
     }
+  }
+
+  &.previous-slide,
+  &.next-slide {
+    @include changeBgOnHover;
   }
 
   &.btn-transparent {
