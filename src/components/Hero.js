@@ -6,6 +6,8 @@ import {
   IoArrowBack,
 } from 'react-icons/all';
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 const Hero = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -27,32 +29,60 @@ const Hero = ({ slides }) => {
 
   if (!Array.isArray(slides) || slides.length <= 0) return null;
 
+  const fadeAnimation = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6 } },
+    exit: { opacity: 0 },
+  };
+
   return (
     <header id='hero'>
-      <div className='wrapper'>
-        {slides.map((slide, index) => {
-          if (index === current) {
-            return (
-              <div className='hero-slide' key={index}>
-                <div
-                  className='hero-image'
-                  style={{ backgroundImage: `url(${slide.image})` }}
+      <AnimatePresence>
+        <div className='wrapper'>
+          {slides.map((slide, index) => {
+            if (index === current) {
+              return (
+                <motion.div
+                  className='hero-slide'
+                  key={index}
+                  initial='hidden'
+                  animate='visible'
+                  variants={fadeAnimation}
                 >
-                  <div className='hero-content'>
-                    <h1>{slide.title}</h1>
-                    <p>{slide.price}</p>
-                    <Link className='btn btn-primary' to={slide.path}>
-                      {slide.label}
-                      <IoMdArrowRoundForward />
-                    </Link>
+                  <div
+                    className='hero-image'
+                    style={{ backgroundImage: `url(${slide.image})` }}
+                  >
+                    <div className='hero-content'>
+                      <h1 data-aos='fade-down' data-aos-duration='1000'>
+                        {slide.title}
+                      </h1>
+                      <p
+                        data-aos='fade-down'
+                        data-aos-duration='1000'
+                        data-aos-delay='200'
+                      >
+                        {slide.price}
+                      </p>
+                      <Link
+                        className='btn btn-primary'
+                        to={slide.path}
+                        data-aos='zoom-out'
+                        data-aos-duration='1000'
+                        data-aos-delay='400'
+                      >
+                        {slide.label}
+                        <IoMdArrowRoundForward />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })}
-      </div>
+                </motion.div>
+              );
+            }
+            return null;
+          })}
+        </div>
+      </AnimatePresence>
       <div className='slider-buttons'>
         <button className='previous-slide' onClick={previousSlide}>
           <IoArrowBack />
