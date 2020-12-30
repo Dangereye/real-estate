@@ -43,51 +43,40 @@ button,
   cursor: pointer;
 }
 
-button.btn-primary, button.btn-primary:active,
-.btn.btn-primary,
-.btn.btn-primary:active {
+button.btn-primary,
+.btn.btn-primary {
   padding: 1.6rem 3.2rem;
   background-color: #000d1a;
   color: #fff;
 }
 
-button.btn-primary:hover, button.btn-primary:active:hover,
-.btn.btn-primary:hover,
-.btn.btn-primary:active:hover {
+button.btn-primary:hover,
+.btn.btn-primary:hover {
   background-color: #cd853f;
 }
 
-button.btn-contact, button.btn-contact:active, button.previous-slide, button.previous-slide:active, button.next-slide, button.next-slide:active,
+button.btn-contact, button.previous-slide, button.next-slide,
 .btn.btn-contact,
-.btn.btn-contact:active,
 .btn.previous-slide,
-.btn.previous-slide:active,
-.btn.next-slide,
-.btn.next-slide:active {
+.btn.next-slide {
   width: 56px;
   height: 56px;
   border-radius: 50%;
   background-color: #000d1a;
 }
 
-button.btn-contact svg, button.btn-contact:active svg, button.previous-slide svg, button.previous-slide:active svg, button.next-slide svg, button.next-slide:active svg,
+button.btn-contact svg, button.previous-slide svg, button.next-slide svg,
 .btn.btn-contact svg,
-.btn.btn-contact:active svg,
 .btn.previous-slide svg,
-.btn.previous-slide:active svg,
-.btn.next-slide svg,
-.btn.next-slide:active svg {
+.btn.next-slide svg {
   width: 2.4rem;
   height: 2.4rem;
 }
 
-button.btn-contact svg path, button.btn-contact:active svg path, button.previous-slide svg path, button.previous-slide:active svg path, button.next-slide svg path, button.next-slide:active svg path,
+button.btn-contact svg path, button.previous-slide svg path, button.next-slide svg path,
 .btn.btn-contact svg path,
-.btn.btn-contact:active svg path,
 .btn.previous-slide svg path,
-.btn.previous-slide:active svg path,
-.btn.next-slide svg path,
-.btn.next-slide:active svg path {
+.btn.next-slide svg path {
   stroke: #fff;
 }
 
@@ -109,7 +98,9 @@ button.btn-secondary,
   color: #fff;
 }
 
-button:focus,
+button:active, button:visited, button:focus,
+.btn:active,
+.btn:visited,
 .btn:focus {
   outline: none;
 }
@@ -614,7 +605,7 @@ footer .container .footer-top {
 }
 
 footer .container .footer-top h2 {
-  font-size: clamp(3.2rem, 6vw, 5.6rem);
+  font-size: clamp(3.2rem, 6vw, 6.4rem);
   font-weight: 400;
   line-height: 1;
 }
@@ -630,6 +621,7 @@ footer .container .footer-top .links > *:not(:last-child) {
 }
 
 footer .container .footer-top .links .link-group {
+  width: 19rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -700,7 +692,8 @@ footer .container .footer-bottom .social-icons > *:not(:last-child) {
 footer .container .footer-bottom .social-icons a {
   display: inline-block;
   margin-bottom: -5px;
-  font-size: 2.4rem;
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  line-height: 1;
   color: #cd853f;
 }
 

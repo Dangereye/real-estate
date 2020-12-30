@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import DropdownNav from './components/DropdownNav';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -13,10 +13,15 @@ import 'aos/dist/aos.css';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     Aos.init({});
@@ -24,8 +29,8 @@ const App = () => {
 
   return (
     <div>
-      <Navbar toggle={toggle} />
-      <DropdownNav isOpen={isOpen} />
+      <Navbar isOpen={isOpen} toggle={toggle} />
+      <DropdownNav isOpen={isOpen} toggle={toggle} />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/about' exact component={About} />

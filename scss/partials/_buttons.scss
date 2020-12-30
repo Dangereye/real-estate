@@ -17,8 +17,7 @@ button,
   transition: 0.4s;
   cursor: pointer;
 
-  &.btn-primary,
-  &.btn-primary:active {
+  &.btn-primary {
     @include changeBgOnHover;
     padding: 1.6rem 3.2rem;
     background-color: $primary-color;
@@ -26,11 +25,8 @@ button,
   }
 
   &.btn-contact,
-  &.btn-contact:active,
   &.previous-slide,
-  &.previous-slide:active,
-  &.next-slide,
-  &.next-slide:active {
+  &.next-slide {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -60,6 +56,8 @@ button,
     color: #fff;
   }
 
+  &:active,
+  &:visited,
   &:focus {
     outline: none;
   }

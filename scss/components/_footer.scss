@@ -10,7 +10,7 @@ footer {
       align-items: center;
 
       h2 {
-        font-size: clamp(3.2rem, 6vw, 5.6rem);
+        font-size: clamp(3.2rem, 6vw, 6.4rem);
         font-weight: 400;
         line-height: 1;
       }
@@ -23,6 +23,7 @@ footer {
         }
 
         .link-group {
+          width: 19rem;
           display: flex;
           flex-direction: column;
 
@@ -70,7 +71,8 @@ footer {
         a {
           display: inline-block;
           margin-bottom: -5px;
-          font-size: 2.4rem;
+          font-size: clamp(2.4rem, 6vw, 3.2rem);
+          line-height: 1;
           color: $secondary-color;
         }
       }

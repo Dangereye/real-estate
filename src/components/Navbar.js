@@ -3,8 +3,7 @@ import { GrContact } from 'react-icons/gr';
 import { Link, useLocation } from 'react-router-dom';
 import { NavbarMenuData } from '../data/NavbarMenuData';
 
-const Navbar = ({ toggle }) => {
-  const [mobileMenu, setMobileMenu] = useState(false);
+const Navbar = ({ isOpen, toggle }) => {
   const [navbar, setNavbar] = useState(false);
   const location = useLocation();
 
@@ -47,11 +46,8 @@ const Navbar = ({ toggle }) => {
         ))}
       </ul>
       <div
-        className={mobileMenu ? 'mobile-menu active' : 'mobile-menu'}
-        onClick={() => {
-          setMobileMenu(!mobileMenu);
-          toggle();
-        }}
+        className={isOpen ? 'mobile-menu active' : 'mobile-menu'}
+        onClick={toggle}
       >
         <div></div>
         <div></div>

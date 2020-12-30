@@ -20,15 +20,9 @@ const Footer = () => {
           <div className='links'>
             <div className='link-group'>
               <h4>Contact Us</h4>
-              <Link to='/homes'>FAQ</Link>
-              <Link to='/homes'>Support</Link>
-              <Link to='/homes'>Questions</Link>
-            </div>
-            <div className='link-group'>
-              <h4>Offices</h4>
-              <Link to='/homes'>USA</Link>
-              <Link to='/homes'>Europe</Link>
-              <Link to='/homes'>UK</Link>
+              <Link to='/contact'>FAQ</Link>
+              <Link to='/contact'>Support</Link>
+              <Link to='/contact'>Questions</Link>
             </div>
           </div>
         </div>
@@ -63,7 +57,7 @@ const Footer = () => {
               <FaFacebookF />
             </a>
           </div>
-          <Link to='/homes' className='btn btn-secondary'>
+          <Link to='/contact' className='btn btn-secondary'>
             Let's Chat
             <IoMdArrowRoundForward />
           </Link>
