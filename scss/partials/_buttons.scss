@@ -10,12 +10,15 @@ button,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   border: none;
   font-size: $base-font-size;
   color: #fff;
   transition: 0.4s;
   cursor: pointer;
+
+  span {
+    margin-right: 8px;
+  }
 
   &.btn-primary {
     @include changeBgOnHover;
@@ -65,4 +68,9 @@ button,
   &:hover {
     transform: translateY(-3px);
   }
+}
+
+p + button,
+p + .btn {
+  margin-top: 3rem;
 }

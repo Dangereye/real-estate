@@ -58,7 +58,7 @@ const Footer = () => {
             </a>
           </div>
           <Link to='/contact' className='btn btn-secondary'>
-            Let's Chat
+            <span>Let's Chat</span>
             <IoMdArrowRoundForward />
           </Link>
         </div>

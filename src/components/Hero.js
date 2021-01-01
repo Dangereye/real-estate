@@ -71,7 +71,7 @@ const Hero = ({ slides }) => {
                         data-aos-duration='1000'
                         data-aos-delay='400'
                       >
-                        {slide.label}
+                        <span>{slide.label}</span>
                         <IoMdArrowRoundForward />
                       </Link>
                     </div>

@@ -30,7 +30,7 @@ const ListingsSection = () => {
             <img src={HomeOne} alt='Home' />
             <h3>8 bed 10 bath house in Venice, California</h3>
             <Link to='/homes' className='btn btn-transparent'>
-              View Details
+              <span>View Details</span>
               <IoMdArrowRoundForward />
             </Link>
           </div>
@@ -45,7 +45,7 @@ const ListingsSection = () => {
             <img src={HomeTwo} alt='Home' />
             <h3>4 bed 2 bath house in Miami, Florida</h3>
             <Link to='/homes' className='btn btn-transparent'>
-              View Details
+              <span>View Details</span>
               <IoMdArrowRoundForward />
             </Link>
           </div>

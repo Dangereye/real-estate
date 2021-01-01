@@ -1,0 +1,28 @@
+form {
+  > *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .input-group {
+    label {
+      display: block;
+      font-size: $base-font-size;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1.2rem;
+      border: 1px solid $border-color;
+      font-size: $base-font-size;
+      color: $text-dark;
+      font-weight: 300;
+    }
+    textarea {
+      min-height: 20rem;
+    }
+  }
+  input[type='submit'] {
+  }
+}

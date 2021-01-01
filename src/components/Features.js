@@ -33,7 +33,7 @@ const Features = () => {
             Laudantium consequuntur nam sunt minus.
           </p>
           <Link to='/homes' className='btn btn-transparent'>
-            Learn More <IoMdArrowRoundForward />
+            <span>Learn More</span> <IoMdArrowRoundForward />
           </Link>
         </div>
       </div>

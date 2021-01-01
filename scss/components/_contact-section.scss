@@ -1,0 +1,8 @@
+#contact {
+  .container {
+    padding-top: $section-offset;
+    > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}
