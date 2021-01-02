@@ -1,33 +1,48 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import Modal from '../components/Modal';
 
 const Contact = () => {
+  const [submitMsg, setSubmitMsg] = useState(false);
+  const [modalMsg, setModalMsg] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const regex = /[^a-zA-Z0-9 @,?&£$%#"*+'=.\-_!]/g;
 
+  const toggle = () => {
+    setSubmitMsg(!submitMsg);
+  };
+
   const sendMail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_en011jp', 'template_9jgjaxb', e.target, 'secret')
+      .sendForm(
+        'service_en011jp',
+        'template_9jgjaxb',
+        e.target,
+        'user_WqQbYVbwS3kEpfyyJ2eHJ'
+      )
       .then(
         (result) => {
-          console.log(result.text);
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+          setModalMsg('Sent successfully!');
+          toggle();
         },
         (error) => {
-          console.log(error.text);
+          setModalMsg('Oops! Please try again.');
+          toggle();
         }
       );
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
   };
 
   return (
     <section id='contact'>
+      {submitMsg && <Modal toggle={toggle} text={modalMsg} />}
       <div className='container'>
         <h2 className='page-title'>Contact Us</h2>
         <p>
