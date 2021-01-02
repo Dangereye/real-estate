@@ -1,4 +1,6 @@
 form {
+  max-width: 99rem;
+  padding: $base-padding 0;
   > *:not(:last-child) {
     margin-bottom: 2rem;
   }

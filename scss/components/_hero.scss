@@ -78,6 +78,9 @@
     padding: 1.6rem clamp(1.6rem, 2.5vw, 4rem);
     z-index: 100;
     display: flex;
-    gap: 1.6rem;
+
+    > *:not(:last-child) {
+      margin-right: 2rem;
+    }
   }
 }
